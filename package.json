@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "engines": {
+    "node": ">=14 <15"
+  },
   "dependencies": {
     "fastify": "^4.23.2",
     "postgres": "^3.3.5"
