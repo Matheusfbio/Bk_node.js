@@ -13,7 +13,6 @@ server.post("/users", async (request, reply) => {
   await database.create({
     fullname,
     age,
-    ,
   });
 
   return reply.status(201).send();
