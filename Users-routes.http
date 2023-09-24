@@ -1,0 +1,25 @@
+POST https://bk-node-postgres.onrender.com/users
+Content-Type: application/json
+
+{
+	"fullname": "Matheus Fábio",
+	"age":"24"
+}
+
+###
+
+
+GET  https://bk-node-postgres.onrender.com/users
+
+###
+
+PUT  https://bk-node-postgres.onrender.com/users
+Content-Type: application/json
+
+{
+	"fullname": "Matheus Fábio",
+	"age":"22"
+}
+
+###
+DELETE  https://bk-node-postgres.onrender.com/users

@@ -1,0 +1,26 @@
+POST https://bk-node-postgres.onrender.com/tasks
+Content-Type: application/json
+
+{
+	"title": "work out on gym",
+	"description":"go to gym",
+	"status":"not started",
+}
+
+###
+
+
+GET  https://bk-node-postgres.onrender.com/tasks
+
+###
+
+PUT  https://bk-node-postgres.onrender.com/tasks
+Content-Type: application/json
+
+# {
+# 	"fullname": "Matheus Fábio",
+# 	"age":"22"
+# }
+
+###
+DELETE  https://bk-node-postgres.onrender.com/tasks

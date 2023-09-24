@@ -3,32 +3,62 @@ import { sql } from "./db.js";
 
 export class DatabasePostgres {
   async list(search) {
-    let videos;
+    //users
+    let users;
     if (search) {
-      videos = await sql`select * from videos where title ilike ${
+      users = await sql`select * from users where fullname ilike ${
         "%" + search + "%"
       }`;
     } else {
-      videos = await sql`select * from videos`;
+      users = await sql`select * from users`;
     }
 
-    return videos;
+    return users;
+    //tasks
+    let tasks;
+    if (search) {
+      tasks = await sql`select * from tasks where fullname ilike ${
+        "%" + search + "%"
+      }`;
+    } else {
+      tasks = await sql`select * from tasks`;
+    }
+
+    return tasks;
+  }
+  //users
+  async create(users) {
+    const userId = randomUUID();
+    const { fullname, age } = tasks;
+
+    await sql`insert into tasks (id , fullname, age) values(${userId},${fullname},${age})`;
   }
 
-  async create(video) {
-    const videoId = randomUUID();
-    const { title, description, duration } = video;
+  async update(id, users) {
+    const { fullname, age } = users;
 
-    await sql`insert into videos (id ,title, description, duration) values(${videoId},${title},${description},${duration})`;
-  }
-
-  async update(id, video) {
-    const { title, description, duration } = video;
-
-    await sql`update videos set title = ${title}, description = ${description}, duration = ${duration} WHERE id = ${id}`;
+    await sql`update tasks set fullname = ${fullname}, age = ${age}, WHERE id = ${id}`;
   }
 
   async delete(id) {
-    await sql`delete from videos where id = ${id}`;
+    await sql`delete from tasks where id = ${id}`;
+  }
+
+  //tasks
+  async create(tasks) {
+    const tasksId = randomUUID();
+    const { title, description, status } = tasks;
+
+    await sql`insert into tasks (id, title, description, status) values(${tasksId},${title},${description},${status})`;
+  }
+
+  async update(id, tasks) {
+    const { title, description, status } = tasks;
+
+    await sql`update tasks set title = ${title}, description = ${description}, status = ${status}, WHERE id = ${id}`;
+  }
+
+  async delete(id) {
+    await sql`delete from tasks where id = ${id}`;
   }
 }
