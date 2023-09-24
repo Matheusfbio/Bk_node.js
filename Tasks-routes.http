@@ -4,7 +4,7 @@ Content-Type: application/json
 {
 	"title": "work out on gym",
 	"description":"go to gym",
-	"status":"not started",
+	"status":"not started"
 }
 
 ###

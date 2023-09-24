@@ -8,12 +8,12 @@ const database = new DatabasePostgres();
 // CRUD USERS
 
 server.post("/users", async (request, reply) => {
-  const { title, description, duration } = request.body;
+  const { fullname, age } = request.body;
 
   await database.create({
-    title,
-    description,
-    duration,
+    fullname,
+    age,
+    ,
   });
 
   return reply.status(201).send();
@@ -29,12 +29,12 @@ server.get("/users", async (request) => {
 
 server.put("/users/:id", async (request, reply) => {
   const videoId = request.params.id;
-  const { title, description, duration } = request.body;
+  const { fullname, age,  } = request.body;
 
   await database.update(videoId, {
     title,
-    description,
-    duration,
+    age,
+    ,
   });
 
   return reply.status(204).send();
@@ -51,12 +51,12 @@ server.delete("/users/:id", async (request, reply) => {
 // CRUD TASKS
 
 server.post("/tasks", async (request, reply) => {
-  const { title, description, duration } = request.body;
+  const { title, description, status } = request.body;
 
   await database.create({
     title,
     description,
-    duration,
+    status
   });
 
   return reply.status(201).send();
@@ -72,12 +72,12 @@ server.get("/tasks", async (request) => {
 
 server.put("/tasks/:id", async (request, reply) => {
   const videoId = request.params.id;
-  const { title, description, duration } = request.body;
+  const { title, description, status  } = request.body;
 
   await database.update(videoId, {
     title,
     description,
-    duration,
+    status
   });
 
   return reply.status(204).send();
