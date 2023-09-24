@@ -2,7 +2,7 @@ import { randomUUID } from "node:crypto";
 import { sql } from "./db.js";
 
 export class DatabasePostgres {
-  async list(search) {
+  async userslist(search) {
     //users
     let users;
     if (search) {
@@ -14,7 +14,10 @@ export class DatabasePostgres {
     }
 
     return users;
-    //tasks
+  }
+
+  async taskslist(search) {
+    //users
     let tasks;
     if (search) {
       tasks = await sql`select * from tasks where fullname ilike ${

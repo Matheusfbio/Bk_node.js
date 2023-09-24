@@ -21,7 +21,7 @@ server.post("/users", async (request, reply) => {
 server.get("/users", async (request) => {
   const search = request.query.search;
 
-  const users = await database.list(search);
+  const users = await database.userslist(search);
 
   return users;
 });
@@ -63,7 +63,7 @@ server.post("/tasks", async (request, reply) => {
 server.get("/tasks", async (request) => {
   const search = request.query.search;
 
-  const tasks = await database.list(search);
+  const tasks = await database.taskslist(search);
 
   return tasks;
 });
