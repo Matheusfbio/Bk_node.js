@@ -28,12 +28,11 @@ server.get("/users", async (request) => {
 
 server.put("/users/:id", async (request, reply) => {
   const videoId = request.params.id;
-  const { fullname, age,  } = request.body;
+  const { fullname, age } = request.body;
 
   await database.update(videoId, {
     title,
     age,
-    ,
   });
 
   return reply.status(204).send();
@@ -55,7 +54,7 @@ server.post("/tasks", async (request, reply) => {
   await database.create({
     title,
     description,
-    status
+    status,
   });
 
   return reply.status(201).send();
@@ -71,12 +70,12 @@ server.get("/tasks", async (request) => {
 
 server.put("/tasks/:id", async (request, reply) => {
   const videoId = request.params.id;
-  const { title, description, status  } = request.body;
+  const { title, description, status } = request.body;
 
   await database.update(videoId, {
     title,
     description,
-    status
+    status,
   });
 
   return reply.status(204).send();
