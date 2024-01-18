@@ -1,26 +1,59 @@
-POST https://bk-node-postgres.onrender.com/tasks
+//CLOUD SERVER
+
+# POST https://bk-node-postgres.onrender.com/tasks
+# Content-Type: application/json
+
+# {
+# 	"title": "work out on gym",
+# 	"description":"go to gym",
+# 	"status":"not started"
+# }
+
+# ###
+
+
+# GET  https://bk-node-postgres.onrender.com/tasks
+
+# ###
+
+# PUT  https://bk-node-postgres.onrender.com/tasks/df9891f9-de2b-42ce-ac64-e7fa1bc116ef
+# Content-Type: application/json
+
+# {
+# 	"title": "make the home's tasks",
+# 	"description":"go to home's tasks",
+# 	"status":"not started"
+# }
+
+# ###
+# DELETE  https://bk-node-postgres.onrender.com/tasks
+
+//LOCAL
+
+POST http://localhost:3333/tasks
 Content-Type: application/json
 
 {
-	"title": "work out on gym",
-	"description":"go to gym",
+	"title": "FOOODddddd",
+	"description":"making food",
 	"status":"not started"
 }
 
 ###
 
 
-GET  https://bk-node-postgres.onrender.com/tasks
+GET  http://localhost:3333/tasks
 
 ###
 
-PUT  https://bk-node-postgres.onrender.com/tasks
+PUT  http://localhost:3333/tasks/0576f891-05c9-4108-a6b1-f70a2a39477a
 Content-Type: application/json
 
-# {
-# 	"fullname": "Matheus Fábio",
-# 	"age":"22"
-# }
+{
+	"title": "make the home's tasks",
+	"description":"go to home's tasks",
+	"status":"not started"
+}
 
 ###
-DELETE  https://bk-node-postgres.onrender.com/tasks
+DELETE  http://localhost:3333/tasks/33d7c516-9257-4293-88e3-15c9e7da3574

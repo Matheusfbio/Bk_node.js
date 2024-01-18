@@ -1,0 +1,53 @@
+//CLOUD SERVER
+
+# POST https://bk-node-postgres.onrender.com/tasks
+# Content-Type: application/json
+
+# {
+# 	"title": "work out on gym",
+# 	"description":"go to gym",
+# 	"status":"not started"
+# }
+
+# ###
+
+
+# GET  https://bk-node-postgres.onrender.com/tasks
+
+# ###
+
+# PUT  https://bk-node-postgres.onrender.com/tasks/df9891f9-de2b-42ce-ac64-e7fa1bc116ef
+# Content-Type: application/json
+
+# {
+# 	"title": "make the home's tasks",
+# 	"description":"go to home's tasks",
+# 	"status":"not started"
+# }
+
+# ###
+# DELETE  https://bk-node-postgres.onrender.com/tasks
+
+//LOCAL
+POST http://localhost:3333/people
+Content-Type: application/json
+
+{
+	"username":"fulano de tal",
+	"old": 26
+}
+###
+GET http://localhost:3333/people
+
+
+###
+PUT  http://localhost:3333/people/37662b93-178c-4c82-a91b-18f71107d28d
+Content-Type: application/json
+
+{
+	"username":"fulano perigosin",
+	"old": 16
+}
+
+###
+DELETE  http://localhost:3333/people/ce201ace-0d87-4c97-b897-d23a9c943c4d
